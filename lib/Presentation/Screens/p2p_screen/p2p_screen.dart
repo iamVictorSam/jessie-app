@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:jessiepay/Presentation/Screens/home/transfer/transer_screen.dart';
+import 'package:jessiepay/Presentation/Screens/transfer/transer_screen.dart';
+
 import 'package:jessiepay/Presentation/widgets/default_button.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -23,7 +24,10 @@ class _P2PScreenState extends State<P2PScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: IconButton(
-            onPressed: () {}, icon: Icon(Icons.arrow_back_ios_rounded)),
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(Icons.arrow_back_ios_rounded)),
         backgroundColor: Color(0xff336699),
         centerTitle: true,
         elevation: 0,
@@ -55,6 +59,7 @@ class _P2PScreenState extends State<P2PScreen> {
 
           /// Sliding Panel
           SlidingUpPanel(
+            boxShadow: [],
             controller: _panelController,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(17),
@@ -130,9 +135,7 @@ class _P2PScreenState extends State<P2PScreen> {
             ),
             DefaultButton(
               text: 'Ok, Got it!',
-              press: () {
-                Get.to(Transfer());
-              },
+              press: () {},
               bgColor: Colors.blue[200],
               textColor: Colors.blue,
             ),

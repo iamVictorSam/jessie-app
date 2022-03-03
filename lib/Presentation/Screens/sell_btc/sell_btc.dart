@@ -25,7 +25,7 @@ class BuyBTCState extends State<BuyBTC> {
               },
               icon: Icon(Icons.arrow_back_ios_new_rounded)),
           title: Text(
-            'Buy BTC',
+            'BTC',
           ),
           centerTitle: true,
           backgroundColor: Colors.blue,
@@ -61,8 +61,8 @@ class BuyBTCState extends State<BuyBTC> {
                         indicator: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10.0),
-                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(20.0),
+                              topLeft: Radius.circular(20.0),
                             )),
                         indicatorColor: Colors.white,
                         labelColor: Colors.blue,

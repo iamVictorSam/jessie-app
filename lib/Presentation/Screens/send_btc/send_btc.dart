@@ -21,7 +21,7 @@ class SendBTCState extends State<SendBTC> {
         backgroundColor: Colors.blue,
         appBar: AppBar(
           title: Text(
-            'Send BTC',
+            'BTC',
           ),
           centerTitle: true,
           backgroundColor: Colors.blue,
@@ -40,13 +40,13 @@ class SendBTCState extends State<SendBTC> {
               Container(
                 height: 70.h,
                 child: AppBar(
-                  backgroundColor: Colors.grey,
+                  backgroundColor: Color.fromARGB(255, 237, 237, 237),
                   automaticallyImplyLeading: false,
                   // ignore: prefer_const_constructors
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10.0),
-                      topLeft: Radius.circular(10.0),
+                      topRight: Radius.circular(20.0),
+                      topLeft: Radius.circular(20.0),
                     ),
                   ),
                   bottom: PreferredSize(
@@ -57,8 +57,8 @@ class SendBTCState extends State<SendBTC> {
                         indicator: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10.0),
-                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(20.0),
+                              topLeft: Radius.circular(20.0),
                             )),
                         indicatorColor: Colors.white,
                         labelColor: Colors.blue,
@@ -210,7 +210,7 @@ class SendTab extends StatelessWidget {
                 TextField(
                   decoration: InputDecoration(
                     label: Text(
-                        'Input BTC Address or Recipient Patricia Username',
+                        'Input BTC Address or Recipient JessiePay Username',
                         style: _labelStyle()),
                     border: outlineInputBorder(),
                     enabledBorder: outlineInputBorder(),
