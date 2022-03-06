@@ -1,9 +1,10 @@
 class OnBoarding {
-  final String title;
+  final String title, desc;
   final String image;
 
   OnBoarding({
     required this.title,
+    required this.desc,
     required this.image,
   });
 }
@@ -11,18 +12,32 @@ class OnBoarding {
 List<OnBoarding> onboardingContents = [
   OnBoarding(
     title: 'Welcome to\n Jessie Pay',
-    image: 'assets/images/onboarding_image_1.png',
+    desc: 'Manage & Trade all  Digital Assets at the snap of a finger.',
+    image: 'assets/Bit2.png',
   ),
   OnBoarding(
-    title: 'Create new habits easily',
-    image: 'assets/images/onboarding_image_2.png',
+    title: 'Secure & Easy to Use Crypto wallet',
+    desc: 'Buy, Sell, Send, Receive and Store Crypto like Never before',
+    image: 'assets/ON1.png',
   ),
   OnBoarding(
-    title: 'Keep track of your progress',
-    image: 'assets/images/onboarding_image_3.png',
+    desc: 'Buy and sell Giftcards from different countries around the world',
+    title: 'Trade Giftcards',
+    image: 'assets/ON3.png',
   ),
   OnBoarding(
-    title: 'Join a supportive community',
-    image: 'assets/images/onboarding_image_4.png',
+    title: 'Create Virtual Master&\nVisa Cards',
+    desc: 'Create and manage virtual card for your spending',
+    image: 'assets/atm.PNG',
+  ),
+  OnBoarding(
+    title: 'Perfect Money Deals',
+    desc: 'Get the best perfect money deals\nwith Jessie.',
+    image: 'assets/pm.png',
+  ),
+  OnBoarding(
+    title: 'Do more with Jessie',
+    desc: 'With Jessiepay, excess airtime is no longer a problem',
+    image: 'assets/ON6.png',
   ),
 ];

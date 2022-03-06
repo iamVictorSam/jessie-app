@@ -40,6 +40,7 @@ class _ProfileBodyState extends State<ProfileBody> {
           children: [
             Center(
               child: CircleAvatar(
+                backgroundImage: AssetImage('assets/profile.png'),
                 radius: 50,
               ),
             ),
@@ -58,7 +59,9 @@ class _ProfileBodyState extends State<ProfileBody> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage('assets/user.png'),
+                    ),
                     title: Text(
                       'View Profile',
                       style: _titleStyle,
@@ -71,9 +74,12 @@ class _ProfileBodyState extends State<ProfileBody> {
                   ),
                   ColorContainer(
                     child: ListTile(
-                      leading: CircleAvatar(),
+                      leading: Image.asset(
+                        'assets/ref.jpeg',
+                        height: 25.h,
+                      ),
                       title: Text(
-                        'Limit',
+                        'Referral',
                         style: _titleStyle,
                       ),
                       trailing: IconButton(
@@ -100,7 +106,10 @@ class _ProfileBodyState extends State<ProfileBody> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/bank.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Account Details',
                       style: _titleStyle,
@@ -112,7 +121,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                     ),
                   ),
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/speedometer.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Limit',
                       style: _titleStyle,
@@ -140,7 +152,10 @@ class _ProfileBodyState extends State<ProfileBody> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/message.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Email Notification',
                       style: _titleStyle,
@@ -152,7 +167,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                     ),
                   ),
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/alarm.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Push Notification',
                       style: _titleStyle,
@@ -183,7 +201,10 @@ class _ProfileBodyState extends State<ProfileBody> {
               child: Column(
                 children: [
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/reset.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Reset Password',
                       style: _titleStyle,
@@ -195,7 +216,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                     ),
                   ),
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/password.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Transaction Pin',
                       style: _titleStyle,
@@ -207,7 +231,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                     ),
                   ),
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/biometric-identification.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       'Manage Biometrics',
                       style: _titleStyle,
@@ -219,7 +246,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                     ),
                   ),
                   ListTile(
-                    leading: CircleAvatar(),
+                    leading: Image.asset(
+                      'assets/authentication.png',
+                      height: 25.h,
+                    ),
                     title: Text(
                       '2FA Notification',
                       style: _titleStyle,
@@ -233,18 +263,18 @@ class _ProfileBodyState extends State<ProfileBody> {
                   SizedBox(
                     height: 15.h,
                   ),
-                  ListTile(
-                    leading: CircleAvatar(),
-                    title: Text(
-                      'Delete Account',
-                      style: _titleStyle,
-                    ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.arrow_forward_ios_rounded),
-                      onPressed: () {},
-                      iconSize: 16.h,
-                    ),
-                  ),
+                  // ListTile(
+                  //   leading: CircleAvatar(),
+                  //   title: Text(
+                  //     'Delete Account',
+                  //     style: _titleStyle,
+                  //   ),
+                  //   trailing: IconButton(
+                  //     icon: Icon(Icons.arrow_forward_ios_rounded),
+                  //     onPressed: () {},
+                  //     iconSize: 16.h,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -317,7 +347,10 @@ class _ProfileBodyState extends State<ProfileBody> {
             ),
             ColorContainer(
               child: ListTile(
-                leading: CircleAvatar(),
+                leading: Image.asset(
+                  'assets/log-out.png',
+                  height: 25.h,
+                ),
                 title: Text(
                   'Logout',
                   style: _titleStyle,
@@ -335,9 +368,9 @@ class _ProfileBodyState extends State<ProfileBody> {
             // Center(child: Text('JESSIE')),
             Center(
               child: Image.asset(
-                'assets/logo2.jpeg',
-                height: 80,
-                width: 120,
+                'assets/JESSIEPAY 2.png',
+                height: 75.h,
+                width: 110.w,
               ),
             ),
             Row(
@@ -348,7 +381,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 SizedBox(
                   width: 10,
                 ),
-                Text('2022'),
+                Text('2022 | All right reserved'),
               ],
             ),
             SizedBox(

@@ -39,9 +39,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
               ),
-              home:
-                  // seenOnboard == true ? Home() :
-                  OnBoardingPage(),
+              home: seenOnboard == true ? PasswordScreen() : OnBoardingPage(),
             ));
   }
 }

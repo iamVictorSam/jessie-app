@@ -265,6 +265,10 @@ const List<Choice> choices = const <Choice>[
       title: 'Perfect Money',
       desc: 'Make Perfect money transactions the better way',
       image: AssetImage('assets/8.png')),
+  Choice(
+      title: 'Perfect Money',
+      desc: 'Make Perfect money transactions the better way',
+      image: AssetImage('assets/more.png')),
 ];
 
 class SelectCard extends StatelessWidget {

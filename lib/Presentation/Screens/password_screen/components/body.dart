@@ -30,16 +30,6 @@ class _PasswordBodyState extends State<PasswordBody> {
                     "We will request this pin to process your transaction",
                     style: TextStyle(color: Colors.white)),
                 const OtpForm(),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                GestureDetector(
-                  onTap: () {
-                    // OTP code resend
-                  },
-                  child: const Text(
-                    "Sign in",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
               ],
             ),
           ),

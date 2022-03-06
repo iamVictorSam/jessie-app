@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jessiepay/Presentation/Screens/authentication/sign_up_page.dart';
+import 'package:jessiepay/Presentation/Screens/gateway/gateway.dart';
 import 'package:jessiepay/Presentation/Screens/onBoarding/model/onboard_data.dart';
 import 'package:jessiepay/Presentation/helpers/app_styles.dart';
+import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:jessiepay/Presentation/helpers/size_configs.dart';
 import 'package:jessiepay/Presentation/widgets/buttons/my_text_button.dart';
@@ -54,124 +57,188 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-          child: Column(
-        children: [
-          Expanded(
-            flex: 9,
-            child: PageView.builder(
-              controller: _pageController,
-              onPageChanged: (value) {
-                setState(() {
-                  currentPage = value;
-                });
-              },
-              itemCount: onboardingContents.length,
-              itemBuilder: (context, index) => Column(
-                children: [
-                  SizedBox(
-                    height: sizeV * 5,
-                  ),
-                  Text(
-                    onboardingContents[index].title,
-                    style: kTitle,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: sizeV * 5,
-                  ),
-                  Container(
-                    height: sizeV * 45,
-                    child: Image.asset(
-                      onboardingContents[index].image,
-                      fit: BoxFit.contain,
+          child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.2), BlendMode.darken),
+                image: AssetImage('assets/slpas.png'))),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 9,
+              child: PageView.builder(
+                controller: _pageController,
+                onPageChanged: (value) {
+                  setState(() {
+                    currentPage = value;
+                  });
+                },
+                itemCount: onboardingContents.length,
+                itemBuilder: (context, index) => Column(
+                  children: [
+                    // Stack(children: [
+
+                    // ],),
+                    // SizedBox(
+                    //   height: sizeV * 5,
+                    // ),
+
+                    // SizedBox(
+                    //   height: sizeV * 5,
+                    // ),
+                    SizedBox(
+                      height: sizeV * 5,
                     ),
-                  ),
-                  SizedBox(
-                    height: sizeV * 5,
-                  ),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: kBodyText1,
-                      children: [
-                        TextSpan(text: 'WE CAN '),
-                        TextSpan(
-                            text: 'HELP YOU ',
-                            style: TextStyle(
-                              color: kPrimaryColor,
-                            )),
-                        TextSpan(text: 'TO BE A BETTER '),
-                        TextSpan(text: 'VERSION OF '),
-                        TextSpan(
-                          text: 'YOURSELF ',
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                          ),
-                        ),
-                      ],
+                    Container(
+                      width: double.infinity,
+                      // color: Colors.red,
+                      height: sizeV * 45,
+                      child: Image.asset(
+                        onboardingContents[index].image,
+                        alignment: Alignment.bottomCenter,
+                        fit:
+                            onboardingContents[index].image == 'assets/Bit2.png'
+                                ? BoxFit.contain
+                                : BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: sizeV * 5,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  currentPage == onboardingContents.length - 1
-                      ? Expanded(
-                          child: MyTextButton(
-                            buttonName: 'Get Started',
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SignUpPage(),
-                                  ));
-                            },
-                            bgColor: kPrimaryColor,
-                          ),
-                        )
-                      : Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        // height: MediaQuery.of(context).size.height * 7,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(35),
+                                topRight: Radius.circular(35))),
+                        child: Column(
                           children: [
-                            OnBoardNavBtn(
-                              name: 'Skip',
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SignUpPage()));
-                              },
+                            SizedBox(
+                              height: 50.h,
                             ),
-                            Row(
-                              children: List.generate(
-                                onboardingContents.length,
-                                (index) => dotIndicator(index),
+                            Text(
+                              onboardingContents[index].title,
+                              style: TextStyle(
+                                // fontFamily: 'Klasik',
+                                fontSize: SizeConfig.blockSizeH! * 8,
+                                color: kPrimaryColor,
+                                // color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 50.h,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20.0),
+                              child: Text(
+                                onboardingContents[index].desc,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: kPrimaryColor.withOpacity(0.8),
+                                  fontSize: SizeConfig.blockSizeH! * 4.5,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
-                            OnBoardNavBtn(
-                              name: 'Next',
-                              onPressed: () {
-                                _pageController.nextPage(
-                                  duration: Duration(milliseconds: 400),
-                                  curve: Curves.easeInOut,
-                                );
-                              },
-                            )
                           ],
                         ),
-                ],
+                      ),
+                    ),
+                    // RichText(
+                    //   textAlign: TextAlign.center,
+                    //   text: TextSpan(
+                    //     style: kBodyText1,
+                    //     children: [
+                    //       TextSpan(text: 'WE CAN '),
+                    //       TextSpan(
+                    //           text: 'HELP YOU ',
+                    //           style: TextStyle(
+                    //             color: kPrimaryColor,
+                    //           )),
+                    //       TextSpan(text: 'TO BE A BETTER '),
+                    //       TextSpan(text: 'VERSION OF '),
+                    //       TextSpan(
+                    //         text: 'YOURSELF ',
+                    //         style: TextStyle(
+                    //           color: kPrimaryColor,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+
+                    // SizedBox(
+                    //   height: sizeV * 5,
+                    // ),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      currentPage == onboardingContents.length - 1
+                          ? Expanded(
+                              child: MyTextButton(
+                                buttonName: 'Get Started',
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => GateWayScreen(),
+                                      ));
+                                },
+                                bgColor: kPrimaryColor,
+                              ),
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                OnBoardNavBtn(
+                                  color: kSecondaryColor,
+                                  name: 'Skip',
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SignUpPage()));
+                                  },
+                                ),
+                                Row(
+                                  children: List.generate(
+                                    onboardingContents.length,
+                                    (index) => dotIndicator(index),
+                                  ),
+                                ),
+                                OnBoardNavBtn(
+                                  name: 'Next',
+                                  onPressed: () {
+                                    _pageController.nextPage(
+                                      duration: Duration(milliseconds: 400),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  },
+                                )
+                              ],
+                            ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       )),
     );
   }

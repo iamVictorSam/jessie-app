@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jessiepay/Presentation/Screens/authentication/forgot_password_page.dart';
 import 'package:jessiepay/Presentation/Screens/authentication/sign_up_page.dart';
+import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
+import 'package:jessiepay/Presentation/helpers/bottom_nav.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:jessiepay/Presentation/widgets/buttons/large_icon_button.dart';
 import 'package:jessiepay/Presentation/widgets/buttons/my_text_button.dart';
@@ -26,6 +29,12 @@ class _LoginPageState extends State<LoginPage> {
 
   void onSubmit() {
     _loginKey.currentState!.validate();
+    _loginKey.currentState!.validate();
+    if (_loginKey.currentState!.validate()) {
+      _loginKey.currentState!.save();
+      // KeyboardUtil.hideKeyboard(context);
+      Get.offAll(MainScreeen());
+    }
   }
 
   List<FocusNode> _loginFocusNodes = [
@@ -89,19 +98,19 @@ class _LoginPageState extends State<LoginPage> {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                LargeIconButton(
-                                  buttonName: 'Continue with Google',
-                                  iconImage:
-                                      'assets/images/auth/google_icon.png',
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                LargeIconButton(
-                                  buttonName: 'Continue with Facebook',
-                                  iconImage:
-                                      'assets/images/auth/facebook_icon.png',
-                                )
+                                // LargeIconButton(
+                                //   buttonName: 'Continue with Google',
+                                //   iconImage:
+                                //       'assets/images/auth/google_icon.png',
+                                // ),
+                                // SizedBox(
+                                //   height: 10,
+                                // ),
+                                // LargeIconButton(
+                                //   buttonName: 'Continue with Facebook',
+                                //   iconImage:
+                                //       'assets/images/auth/facebook_icon.png',
+                                // )
                               ],
                             ),
                           ),
@@ -120,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                                     height: 14,
                                   ),
                                   Text(
-                                    'Login with email',
+                                    'Login with username or email',
                                     style: kBodyText3,
                                   ),
                                   Divider(
@@ -135,9 +144,10 @@ class _LoginPageState extends State<LoginPage> {
                                       child: Column(
                                         children: [
                                           MyTextFormField(
-                                            hint: 'Email',
+                                            hint: 'Username or Email ',
                                             icon: Icons.email_outlined,
-                                            fillColor: kScaffoldBackground,
+                                            fillColor: Colors.blueAccent
+                                                .withOpacity(0.1),
                                             inputType:
                                                 TextInputType.emailAddress,
                                             inputAction: TextInputAction.next,
@@ -145,7 +155,8 @@ class _LoginPageState extends State<LoginPage> {
                                             validator: emailValidator,
                                           ),
                                           MyPasswordField(
-                                            fillColor: kScaffoldBackground,
+                                            fillColor: Colors.blueAccent
+                                                .withOpacity(0.1),
                                             focusNode: _loginFocusNodes[1],
                                             validator: passwordValidator,
                                           ),

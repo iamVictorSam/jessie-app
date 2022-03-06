@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:jessiepay/Presentation/Screens/buy_btc/buy_btc.dart';
 import 'package:jessiepay/Presentation/Screens/confirm_transaction.dart';
+import 'package:jessiepay/Presentation/Screens/giftcard/giftcard.dart';
 import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/Screens/menu/menu_screen.dart';
 import 'package:jessiepay/Presentation/Screens/naira_wallet/naira_wallet.dart';
@@ -23,7 +24,7 @@ class _MainScreeenState extends State<MainScreeen> {
   int selectedIndex = 0;
   final screen = [
     const Home(),
-    WalletScreen(),
+    GiftCard(),
     Trade(),
     BuyBTC(),
     ProfileScreen(),
@@ -36,7 +37,9 @@ class _MainScreeenState extends State<MainScreeen> {
         color: Color(0xff175acc),
         // buttonBackgroundColor: Colors.white,
         height: 55,
-        backgroundColor: Colors.transparent,
+        backgroundColor: selectedIndex == 1
+            ? Color.fromARGB(255, 46, 184, 248)
+            : Colors.transparent,
         index: selectedIndex,
         items: [
           const Icon(
