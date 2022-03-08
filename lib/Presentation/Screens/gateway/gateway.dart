@@ -19,8 +19,7 @@ class GateWayScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/slpas.png'),
-          ),
+              image: AssetImage('assets/slpas.png'), fit: BoxFit.cover),
         ),
         child: Column(
           children: [

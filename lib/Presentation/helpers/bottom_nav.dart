@@ -7,6 +7,8 @@ import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/Screens/menu/menu_screen.dart';
 import 'package:jessiepay/Presentation/Screens/naira_wallet/naira_wallet.dart';
 import 'package:jessiepay/Presentation/Screens/profile/profile.dart';
+import 'package:jessiepay/Presentation/Screens/renew/model/model.dart';
+import 'package:jessiepay/Presentation/Screens/renew/renew.dart';
 import 'package:jessiepay/Presentation/Screens/select_account/select_account.dart';
 import 'package:jessiepay/Presentation/Screens/send_btc/send_btc.dart';
 import 'package:jessiepay/Presentation/Screens/trading/trading.dart';
@@ -26,7 +28,7 @@ class _MainScreeenState extends State<MainScreeen> {
     const Home(),
     GiftCard(),
     Trade(),
-    BuyBTC(),
+    Renew(),
     ProfileScreen(),
   ];
 

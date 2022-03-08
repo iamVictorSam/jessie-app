@@ -60,6 +60,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
+                fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                     Colors.black.withOpacity(0.2), BlendMode.darken),
                 image: AssetImage('assets/slpas.png'))),
