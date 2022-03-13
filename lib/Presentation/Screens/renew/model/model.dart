@@ -42,4 +42,10 @@ List refillItems = [
       function: () {
         Get.to('');
       }),
+  RefillModel(
+      title: 'Education',
+      icon: Icons.menu_book,
+      function: () {
+        Get.to('');
+      }),
 ];

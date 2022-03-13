@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jessiepay/Presentation/Screens/data_sub/data_sub.dart';
+import 'package:jessiepay/Presentation/Screens/electricity/electricity.dart';
+import 'package:jessiepay/Presentation/Screens/internet_sub/internet_sub.dart';
 import 'package:jessiepay/Presentation/Screens/renew/model/model.dart';
 import 'package:jessiepay/Presentation/widgets/icon_card.dart';
 
@@ -11,6 +14,14 @@ class RenewBody extends StatefulWidget {
 }
 
 class _RenewBodyState extends State<RenewBody> {
+  List<Widget> widgets = [
+    DataSubScreen(),
+    DataSubScreen(),
+    InternetSub(),
+    ElectricityScreen(),
+    ElectricityScreen(),
+    ElectricityScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,13 +87,14 @@ class _RenewBodyState extends State<RenewBody> {
                                 (index) => Padding(
                                       padding: EdgeInsets.only(top: 20.h),
                                       child: IconCard(
+                                          widget: widgets[index],
                                           name: refillItems[index].title,
                                           icon: refillItems[index].icon),
                                     )),
-                            SizedBox(
-                              height: 110.h,
-                              width: 110.h,
-                            ),
+                            // SizedBox(
+                            //   height: 110.h,
+                            //   width: 110.h,
+                            // ),
                           ],
                         ),
                         // SizedBox(

@@ -6,9 +6,11 @@ import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/Screens/password_screen/password_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jessiepay/Presentation/helpers/bottom_nav.dart';
+// import 'package:jessiepay/Presentation/widgets/lib/mpin/mpin_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Presentation/Screens/onBoarding/onBoarding.dart';
+import 'Presentation/widgets/mPin/mpin/mpin_page.dart';
 
 bool? seenOnboard;
 
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
               home:
                   // seenOnboard == true ? PasswordScreen() :
                   // OnBoardingPage(),
-                  MainScreeen(),
+                  MPinPage(),
             ));
   }
 }

@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:jessiepay/Presentation/Screens/home/home_screen.dart';
+import 'package:jessiepay/Presentation/Screens/sell_giftcard/sell_giftcard.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 
 class GiftCard extends StatelessWidget {
@@ -115,6 +117,9 @@ class _GiftCardBodyState extends State<GiftCardBody> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(vertical: 15.h),
                             child: ListTile(
+                              onTap: () {
+                                Get.to(SellGiftcard());
+                              },
                               leading: CircleAvatar(
                                   backgroundColor: kPrimaryColor,
                                   child: Icon(

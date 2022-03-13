@@ -6,19 +6,17 @@ import 'package:jessiepay/Presentation/widgets/default_button.dart';
 
 import '../../../helpers/constants.dart';
 
-class DataSubBody extends StatefulWidget {
-  const DataSubBody({Key? key}) : super(key: key);
+class InternetSubBody extends StatefulWidget {
+  const InternetSubBody({Key? key}) : super(key: key);
 
   @override
-  State<DataSubBody> createState() => _DataSubBodyState();
+  State<InternetSubBody> createState() => _InternetSubBodyState();
 }
 
-class _DataSubBodyState extends State<DataSubBody> {
+class _InternetSubBodyState extends State<InternetSubBody> {
   final List<IconData> iconList = [
     Icons.gif_box_rounded,
     Icons.ac_unit_outlined,
-    Icons.confirmation_num_outlined,
-    Icons.report_gmailerrorred_outlined
   ];
   bool isOpen = false;
   @override
@@ -39,7 +37,7 @@ class _DataSubBodyState extends State<DataSubBody> {
                 ),
                 Spacer(),
                 Text(
-                  'Data Subscription',
+                  'Internet Subscription',
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
@@ -69,7 +67,7 @@ class _DataSubBodyState extends State<DataSubBody> {
                       height: 20.h,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ...List.generate(
                             iconList.length,
@@ -151,7 +149,7 @@ class _DataSubBodyState extends State<DataSubBody> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Select Plan',
+                          'Select Data Volume',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),

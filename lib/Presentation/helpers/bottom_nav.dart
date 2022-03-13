@@ -2,14 +2,21 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:jessiepay/Presentation/Screens/buy_btc/buy_btc.dart';
 import 'package:jessiepay/Presentation/Screens/confirm_transaction.dart';
+import 'package:jessiepay/Presentation/Screens/data_sub/data_sub.dart';
+import 'package:jessiepay/Presentation/Screens/electricity/components/body.dart';
+import 'package:jessiepay/Presentation/Screens/electricity/electricity.dart';
 import 'package:jessiepay/Presentation/Screens/giftcard/giftcard.dart';
 import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/Screens/menu/menu_screen.dart';
 import 'package:jessiepay/Presentation/Screens/naira_wallet/naira_wallet.dart';
+import 'package:jessiepay/Presentation/Screens/perfect_buy/perfect_buy.dart';
+import 'package:jessiepay/Presentation/Screens/perfect_money/perfect_money.dart';
 import 'package:jessiepay/Presentation/Screens/profile/profile.dart';
 import 'package:jessiepay/Presentation/Screens/renew/model/model.dart';
 import 'package:jessiepay/Presentation/Screens/renew/renew.dart';
 import 'package:jessiepay/Presentation/Screens/select_account/select_account.dart';
+import 'package:jessiepay/Presentation/Screens/select_giftcard/select_giftcard.dart';
+import 'package:jessiepay/Presentation/Screens/sell_giftcard/sell_giftcard.dart';
 import 'package:jessiepay/Presentation/Screens/send_btc/send_btc.dart';
 import 'package:jessiepay/Presentation/Screens/trading/trading.dart';
 import 'package:jessiepay/Presentation/Screens/transaction_success/transaction_success.dart';
@@ -28,7 +35,7 @@ class _MainScreeenState extends State<MainScreeen> {
     const Home(),
     GiftCard(),
     Trade(),
-    Renew(),
+    PerfectBuy(),
     ProfileScreen(),
   ];
 

@@ -2,6 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:jessiepay/Presentation/Screens/giftcard/giftcard.dart';
+import 'package:jessiepay/Presentation/Screens/perfect_buy/perfect_buy.dart';
+import 'package:jessiepay/Presentation/Screens/renew/renew.dart';
+import 'package:jessiepay/Presentation/Screens/wallet_screen/wallet_screen.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,6 +33,15 @@ class _HomeBodyState extends State<HomeBody> {
     // TODO: implement initState
     super.initState();
   }
+
+  List<Widget> widgets = [
+    GiftCard(),
+    WalletScreen(),
+    PerfectBuy(),
+    Renew(),
+    WalletScreen(),
+    WalletScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -193,7 +207,10 @@ class _HomeBodyState extends State<HomeBody> {
                   childAspectRatio: 1.2,
                   children: List.generate(choices.length, (index) {
                     return Center(
-                      child: SelectCard(choice: choices[index]),
+                      child: SelectCard(
+                        choice: choices[index],
+                        widgets: widgets[index],
+                      ),
                     );
                   })))
         ],
@@ -237,43 +254,61 @@ class ShortCutColumn extends StatelessWidget {
 }
 
 class Choice {
-  const Choice({required this.desc, required this.title, required this.image});
+  const Choice(
+      {required this.desc,
+      // required this.press,
+      required this.title,
+      required this.image});
   final String title;
   final String desc;
+  // final GestureTapCallback press;
   final AssetImage image;
 }
 
 const List<Choice> choices = const <Choice>[
   Choice(
+      // press: () {
+      //   Get.back();
+      // },
       title: 'Giftcard',
       desc: 'Buy and sell Giftcards at market-leading rates',
       image: AssetImage('assets/7.png')),
   Choice(
+      // press: () => Get.back(),
       title: 'Trade',
       desc: 'Send, recieve and trade crypto currency with us at Jessie',
       image: AssetImage('assets/5.png')),
   Choice(
+      // press: () {},
       title: 'Perfect Money',
       desc: 'Make Perfect money transactions the better way',
       image: AssetImage('assets/6.png')),
   Choice(
-      title: 'Refill',
-      desc:
-          'Refill your airtime, data, internet subscription, education the easy way',
-      image: AssetImage('assets/4.png')),
+    title: 'Refill',
+    desc:
+        'Refill your airtime, data, internet subscription, education the easy way',
+    image: AssetImage('assets/4.png'),
+    //  press: () {  },
+  ),
   Choice(
-      title: 'Perfect Money',
-      desc: 'Make Perfect money transactions the better way',
-      image: AssetImage('assets/8.png')),
+    title: 'Perfect Money',
+    desc: 'Make Perfect money transactions the better way',
+    image: AssetImage('assets/8.png'),
+    //  press: () {  },
+  ),
   Choice(
-      title: 'Perfect Money',
-      desc: 'Make Perfect money transactions the better way',
-      image: AssetImage('assets/more.png')),
+    title: 'Perfect Money',
+    desc: 'Make Perfect money transactions the better way',
+    image: AssetImage('assets/more.png'),
+    //  press: () {  },
+  ),
 ];
 
 class SelectCard extends StatelessWidget {
-  const SelectCard({Key? key, required this.choice}) : super(key: key);
+  const SelectCard({Key? key, required this.choice, required this.widgets})
+      : super(key: key);
   final Choice choice;
+  final Widget widgets;
 
   @override
   Widget build(BuildContext context) {
@@ -281,40 +316,46 @@ class SelectCard extends StatelessWidget {
     return SizedBox(
       // height: 200,
       // width: 50,
-      child: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+      child: GestureDetector(
+        onTap: () {
+          print('thois');
+          Get.to(widgets);
+        },
         child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: choice.image, fit: BoxFit.fill),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 45.h,
-                  ),
-                  // Text(
-                  //   choice.title,
-                  //   style: TextStyle(
-                  //       fontSize: 10.sp,
-                  //       color: Colors.white,
-                  //       fontWeight: FontWeight.bold),
-                  // ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  // Text(
-                  //   choice.desc,
-                  //   style: TextStyle(color: Colors.white, fontSize: 8.sp),
-                  // ),
-                ],
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+          child: Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: choice.image, fit: BoxFit.fill),
               ),
-            )),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 45.h,
+                    ),
+                    // Text(
+                    //   choice.title,
+                    //   style: TextStyle(
+                    //       fontSize: 10.sp,
+                    //       color: Colors.white,
+                    //       fontWeight: FontWeight.bold),
+                    // ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    // Text(
+                    //   choice.desc,
+                    //   style: TextStyle(color: Colors.white, fontSize: 8.sp),
+                    // ),
+                  ],
+                ),
+              )),
+        ),
       ),
     );
   }

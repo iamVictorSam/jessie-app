@@ -76,7 +76,7 @@ class Trade extends StatelessWidget {
               GestureDetector(
                 onTap: () => Get.to(WalletScreen()),
                 child: ColorContainer(
-                  bgColor: yellow,
+                  bgColor: Color(0xffF7931A),
                   child: Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -93,7 +93,7 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: kPrimaryColor,
+                bgColor: Color(0xff1A8FDD),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -102,30 +102,14 @@ class Trade extends StatelessWidget {
                       exAmount: '36,018',
                       exName: 'ETH/USD',
                       walletName: 'Ethereum Wallet',
-                      wAmount: 'BTC 0.00000',
+                      wAmount: 'ETH 0.00000',
                     )),
               ),
               SizedBox(
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: Colors.black,
-                child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
-                    child: RowCard(
-                      image: 'assets/litecoin.png',
-                      exAmount: '36,018',
-                      exName: 'LTC/USD',
-                      walletName: 'Litecoin Wallet',
-                      wAmount: 'LTC 0.00000',
-                    )),
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              ColorContainer(
-                bgColor: green,
+                bgColor: Color(0xff50AF95),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -141,7 +125,7 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: yellow,
+                bgColor: Color(0xffF0B90B),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -157,7 +141,7 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: kPrimaryColor,
+                bgColor: Color(0xff0c7a93),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -173,23 +157,7 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: Colors.black,
-                child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
-                    child: RowCard(
-                      image: 'assets/solana.png',
-                      exAmount: '36,018',
-                      exName: 'SOL/USD',
-                      walletName: 'Solana Wallet',
-                      wAmount: 'SOL 0.00000',
-                    )),
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              ColorContainer(
-                bgColor: yellow,
+                bgColor: Color(0xffCFB66C),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -205,39 +173,23 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: Colors.red,
+                bgColor: Color(0xff8777DB),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
                     child: RowCard(
-                      image: 'assets/tron.png',
+                      image: 'assets/solana.png',
                       exAmount: '36,018',
-                      exName: 'TRX/USD',
-                      walletName: 'Tron Wallet',
-                      wAmount: 'TRX 0.00000',
+                      exName: 'SOL/USD',
+                      walletName: 'Solana Wallet',
+                      wAmount: 'SOL 0.00000',
                     )),
               ),
               SizedBox(
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: Colors.black,
-                child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
-                    child: RowCard(
-                      image: 'assets/matic.png',
-                      exAmount: '36,018',
-                      exName: 'MATIC/USD',
-                      walletName: 'Polygon Wallet',
-                      wAmount: 'MATIC 0.00000',
-                    )),
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              ColorContainer(
-                bgColor: kPrimaryColor,
+                bgColor: Color(0xff0033ad),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -253,7 +205,39 @@ class Trade extends StatelessWidget {
                 height: 40.h,
               ),
               ColorContainer(
-                bgColor: Colors.black,
+                bgColor: Color(0xff345D9D),
+                child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
+                    child: RowCard(
+                      image: 'assets/litecoin.png',
+                      exAmount: '36,018',
+                      exName: 'LTC/USD',
+                      walletName: 'Litecoin Wallet',
+                      wAmount: 'LTC 0.00000',
+                    )),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              ColorContainer(
+                bgColor: Color(0xff8247e5),
+                child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
+                    child: RowCard(
+                      image: 'assets/matic.png',
+                      exAmount: '36,018',
+                      exName: 'MATIC/USD',
+                      walletName: 'Polygon Wallet',
+                      wAmount: 'MATIC 0.00000',
+                    )),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              ColorContainer(
+                bgColor: Color(0xff323232),
                 child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
@@ -263,6 +247,22 @@ class Trade extends StatelessWidget {
                       exName: 'XRP/USD',
                       walletName: 'Ripple Wallet',
                       wAmount: 'XRP 0.00000',
+                    )),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              ColorContainer(
+                bgColor: Color(0xffff060a),
+                child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.h),
+                    child: RowCard(
+                      image: 'assets/tron.png',
+                      exAmount: '36,018',
+                      exName: 'TRX/USD',
+                      walletName: 'Tron Wallet',
+                      wAmount: 'TRX 0.00000',
                     )),
               ),
               SizedBox(

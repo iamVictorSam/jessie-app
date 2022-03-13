@@ -4,8 +4,15 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jessiepay/Presentation/Screens/home/home_screen.dart';
+import 'package:jessiepay/Presentation/Screens/perfect_money/perfect_money.dart';
+import 'package:jessiepay/Presentation/Screens/renew/renew.dart';
+import 'package:jessiepay/Presentation/Screens/trading/trading.dart';
+import 'package:jessiepay/Presentation/Screens/wallet_screen/wallet_screen.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:intl/intl.dart';
+
+import '../giftcard/giftcard.dart';
+import '../perfect_buy/perfect_buy.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -32,6 +39,15 @@ class _HomeBodyState extends State<HomeBody> {
       DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
 
   String datetime = DateTime.now().toString();
+
+  List<Widget> widgets = [
+    GiftCard(),
+    Trade(),
+    PerfectMoney(),
+    Renew(),
+    WalletScreen(),
+    WalletScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +162,10 @@ class _HomeBodyState extends State<HomeBody> {
                         childAspectRatio: 1.2,
                         children: List.generate(choices.length, (index) {
                           return Center(
-                            child: SelectCard(choice: choices[index]),
+                            child: SelectCard(
+                              choice: choices[index],
+                              widgets: widgets[index],
+                            ),
                           );
                         })),
                   )
