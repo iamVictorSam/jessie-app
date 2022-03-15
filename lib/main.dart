@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Jessie Pay',
               theme: ThemeData(
+                fontFamily: 'Nunito',
                 textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
               ),
               home:

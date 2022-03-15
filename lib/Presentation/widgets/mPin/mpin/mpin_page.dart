@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:jessiepay/Presentation/widgets/mPin/mpin/mpin_widget.dart';
 
@@ -55,7 +57,7 @@ class _MPinPageState extends State<MPinPage> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                         ),
                       ),
                     ),
@@ -66,7 +68,7 @@ class _MPinPageState extends State<MPinPage> {
                         style: TextStyle(
                           color: Colors.white70,
                           fontWeight: FontWeight.w600,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ),
@@ -77,14 +79,16 @@ class _MPinPageState extends State<MPinPage> {
                       onCompleted: (mPin) {
                         print('You entered -> $mPin');
                         if (mPin == '12345') {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  title: Text('Success'),
-                                  content: Text('Go to next page'),
-                                );
-                              });
+                          Get.offAll(Home());
+                          // showDialog(
+
+                          //     context: context,
+                          //     builder: (context) {
+                          //       return AlertDialog(
+                          //         title: Text('Success'),
+                          //         content: Text('Go to next page'),
+                          //       );
+                          //     });
                         } else {
                           //animate wrong input
                           mPinController.notifyWrongInput!();
@@ -183,7 +187,7 @@ class _MPinPageState extends State<MPinPage> {
       textColor: Colors.black,
       child: Text(
         '$input',
-        style: TextStyle(fontSize: 24),
+        style: TextStyle(fontSize: 24.sp),
       ),
     );
   }

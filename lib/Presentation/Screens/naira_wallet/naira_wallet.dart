@@ -8,6 +8,11 @@ import 'package:jessiepay/Presentation/widgets/default_button.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class NairaWallet extends StatefulWidget {
+  final Color bgColor;
+  final String title;
+
+  const NairaWallet({Key? key, required this.bgColor, required this.title})
+      : super(key: key);
   @override
   _NairaWalletState createState() => _NairaWalletState();
 }
@@ -27,11 +32,11 @@ class _NairaWalletState extends State<NairaWallet> {
         leading: IconButton(
             onPressed: () => Get.back(),
             icon: Icon(Icons.arrow_back_ios_rounded)),
-        backgroundColor: Colors.green[500]!,
+        backgroundColor: widget.bgColor,
         centerTitle: true,
         elevation: 0,
         title: Text(
-          'Naira Wallet',
+          widget.title,
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -43,7 +48,7 @@ class _NairaWalletState extends State<NairaWallet> {
             heightFactor: 0.7,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.green[500]!,
+                color: widget.bgColor,
               ),
               child: Column(children: [
                 Text(
@@ -78,7 +83,12 @@ class _NairaWalletState extends State<NairaWallet> {
                       Expanded(
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  elevation: 0, primary: Color(0xff5CCE9B)),
+                                  elevation: 0,
+                                  primary: widget.bgColor
+                                      .withAlpha(9)
+                                      .withBlue(8)
+                                      .withRed(2)
+                                      .withGreen(7)),
                               child: Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Text(
@@ -95,7 +105,12 @@ class _NairaWalletState extends State<NairaWallet> {
                       Expanded(
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  elevation: 0, primary: Color(0xff5CCE9B)),
+                                  elevation: 0,
+                                  primary: widget.bgColor
+                                      .withAlpha(9)
+                                      .withBlue(8)
+                                      .withRed(2)
+                                      .withGreen(7)),
                               child: Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Text(
@@ -117,7 +132,7 @@ class _NairaWalletState extends State<NairaWallet> {
             alignment: Alignment.bottomCenter,
             heightFactor: 0.7,
             child: Container(
-              color: Color(0xff47B264),
+              color: widget.bgColor,
               child: Column(
                 children: [
                   // SizedBox(
@@ -156,7 +171,7 @@ class _NairaWalletState extends State<NairaWallet> {
                           ListTile(
                             onTap: () => Get.to(P2PScreen()),
                             leading: CircleAvatar(
-                              backgroundColor: Color(0xff47B264),
+                              backgroundColor: widget.bgColor,
                               child: Text('N',
                                   style: TextStyle(color: Colors.white)),
                             ),
@@ -181,7 +196,7 @@ class _NairaWalletState extends State<NairaWallet> {
                           ),
                           ListTile(
                             leading: CircleAvatar(
-                              backgroundColor: Color(0xff47B264),
+                              backgroundColor: widget.bgColor,
                               child: Text('N',
                                   style: TextStyle(color: Colors.white)),
                             ),
@@ -206,7 +221,7 @@ class _NairaWalletState extends State<NairaWallet> {
                           ),
                           ListTile(
                             leading: CircleAvatar(
-                              backgroundColor: Color(0xff47B264),
+                              backgroundColor: widget.bgColor,
                               child: Text('N',
                                   style: TextStyle(color: Colors.white)),
                             ),
@@ -319,7 +334,7 @@ class _NairaWalletState extends State<NairaWallet> {
           ListTile(
             onTap: () => Get.to(P2PScreen()),
             leading: CircleAvatar(
-              backgroundColor: Color(0xff47B264),
+              backgroundColor: widget.bgColor,
               child: Text('N', style: TextStyle(color: Colors.white)),
             ),
             title: Text('Deposit'),
@@ -342,7 +357,7 @@ class _NairaWalletState extends State<NairaWallet> {
           ),
           ListTile(
             leading: CircleAvatar(
-              backgroundColor: Color(0xff47B264),
+              backgroundColor: widget.bgColor,
               child: Text('N', style: TextStyle(color: Colors.white)),
             ),
             title: Text('Deposit'),
@@ -365,7 +380,7 @@ class _NairaWalletState extends State<NairaWallet> {
           ),
           ListTile(
             leading: CircleAvatar(
-              backgroundColor: Color(0xff47B264),
+              backgroundColor: widget.bgColor,
               child: Text('N', style: TextStyle(color: Colors.white)),
             ),
             title: Text('Deposit'),
