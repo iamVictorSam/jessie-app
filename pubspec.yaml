@@ -44,6 +44,9 @@ dependencies:
   google_fonts: ^2.1.0 # to use google fonts
   shared_preferences: ^2.0.7 # to save data to device we use this to load onboard for first time only
   numeric_keyboard: ^1.1.0
+  local_auth: ^1.1.11
+  get_storage: ^2.0.3
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

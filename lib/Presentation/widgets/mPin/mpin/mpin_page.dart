@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:jessiepay/Presentation/Screens/home_new/home.dart';
 import 'package:jessiepay/Presentation/helpers/constants.dart';
 import 'package:jessiepay/Presentation/widgets/mPin/mpin/mpin_widget.dart';
+import 'package:jessiepay/services/biometrics/auth.dart';
+import 'package:local_auth/local_auth.dart';
 
 class MPinPage extends StatefulWidget {
   @override
@@ -123,8 +125,30 @@ class _MPinPageState extends State<MPinPage> {
                             childAspectRatio: 1.6,
                             children: [
                               MaterialButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   // mPinController.addInput('$input');
+                                  // final isAuthenticated =
+                                  //     await LocalAuthApi.authentication();
+
+                                  final biometrics =
+                                      await LocalAuthApi.getBiometrics();
+
+                                  final hasFingerPrint = biometrics
+                                      .contains(BiometricType.fingerprint);
+
+                                  final hasFaceId =
+                                      biometrics.contains(BiometricType.face);
+
+                                  final isAuthenticated =
+                                      await LocalAuthApi.authentication();
+                                  if (isAuthenticated!) {
+                                    Get.offAll(Home());
+                                  }
+                                  // if(!hasFaceId) {
+                                  //   return ;
+                                  // }else{
+
+                                  // }
                                 },
                                 textColor: Colors.black,
                                 child: Icon(Icons.fingerprint),
